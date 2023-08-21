@@ -1,0 +1,28 @@
+:root {
+    --header-bg-colour: darkslategray;
+    --header-text-colour: white;
+
+    --run-btn-bg-colour: #69bd6c;
+    --run-btn-bg-hover-colour: #8eda91;
+
+    --section-border-colour: #c0c0c0;
+
+    --app-bg-colour: lightgoldenrodyellow;
+    --card-bg-colour: white;
+    --card-border-colour: #c0c0c0;
+    --card-border-highlight-colour: black;
+
+    --card-no-duplicates-highlight-colour: #afebcd;
+    --card-duplicates-highlight-colour: #f0c9c9;
+
+    --article-bg-colour: #f8f8f8;
+    --instructions-highlight-colour: #69bd6c;
+    --kata-highlight-colour: #ebeb56;
+
+    --profile-border-colour: black;
+    --profile-bg-colour: white;
+    --profile-icon-bg-hover-colour: #e0e0e0;
+
+    --footer-bg-colour: #303030;
+    --footer-link-colour: white;
+}
