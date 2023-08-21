@@ -1,12 +1,18 @@
-function sumConsecutiveDuplicates(inputArray) {
+async function sumConsecutiveDuplicates(inputArray) {
     if (error = getInputErrors(inputArray)) {
         return error;
     }
+
+    // frontend - disable user controls
+    disableControls(true);
 
     const numbers = [...inputArray];
 
     for (let scanIndex=0; scanIndex<numbers.length; scanIndex++) {
         scannedNumber = numbers[scanIndex];
+
+        // frontend - highlight element being scanned
+        await highlightCard(scanIndex);
 
         let duplicateIndexes = [];
 
@@ -15,25 +21,39 @@ function sumConsecutiveDuplicates(inputArray) {
         }
         
         if (duplicateIndexes.length > 0) {
+            // frontend - highlight duplicate elements
+            await highlightCardDuplicates([scanIndex, ...duplicateIndexes]);
+
             const duplicates = numbers.splice(scanIndex, duplicateIndexes.length);
             const duplicatesTotal = duplicates.reduce((number, total) => total+number);
 
             numbers[scanIndex] += duplicatesTotal;
+
+            // frontend - remove duplicate elements (and update subtotal)
+            await removeCardDuplicates(duplicateIndexes, scanIndex, numbers[scanIndex]);
         }
+        // frontend - show card has no duplicates
+        else await highlightCardNoDuplicates(scanIndex);
 
     }
+    // frontend - rebuild cards based on resulting array
+    setupCardsNoAnimation(numbers);
+
+    // frontend - enable user controls
+    resetSelect();
+    disableControls(false);
 
     return numbers;
 }
 
-function reduceConsecutives(inputArray, hasDoneFirstPass) {
+async function reduceConsecutives(inputArray, hasDoneFirstPass) {
     if (error = getInputErrors(inputArray)) {
         return error;
     }
 
     let numbers;
     if (!hasDoneFirstPass) {    // this makes sure the function is always called, so there is at least one animation, even when no duplicates are present
-        numbers = sumConsecutiveDuplicates(inputArray);
+        numbers = await sumConsecutiveDuplicates(inputArray);
     }
     else {
         numbers = [...inputArray];
@@ -52,7 +72,7 @@ function reduceConsecutives(inputArray, hasDoneFirstPass) {
     if (hasConsecutiveDuplicates(numbers)) {
         // recursion
         reducedArray = reduceConsecutives(
-            sumConsecutiveDuplicates(numbers), true
+            await sumConsecutiveDuplicates(numbers), true
         );
     }
     // base case (no consecutive duplicates)
@@ -72,4 +92,7 @@ function getInputErrors(array) {
     return null;
 }
 
-module.exports = { sumConsecutiveDuplicates, reduceConsecutives };
+// only export functions if run in node (jest), not for browser (which does not recognise 'module')
+if (typeof module === "object" && typeof module.exports === "object") {
+    module.exports = { sumConsecutiveDuplicates, reduceConsecutives };
+}
