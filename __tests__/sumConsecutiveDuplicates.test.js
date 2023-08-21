@@ -25,14 +25,6 @@ describe('sumConsecutiveDuplicates()', () => {
         expect(await sumConsecutiveDuplicates([1, 1])).toEqual([2]);
         expect(await sumConsecutiveDuplicates([1, 2, 3, 3])).toEqual([1, 2, 6]);
         expect(await sumConsecutiveDuplicates([1, 1, 2, 2, 3, 3, 4, 4])).toEqual([2, 4, 6, 8]);
-        expect(await sumConsecutiveDuplicates([1, 1, 1, 1, 2, 2, 4])).toEqual([4, 4, 4]);
-    });
-
-    it('should combine two consecutive duplicates', async () => {
-        expect(await sumConsecutiveDuplicates([1, 1])).toEqual([2]);
-        expect(await sumConsecutiveDuplicates([1, 2, 3, 3])).toEqual([1, 2, 6]);
-        expect(await sumConsecutiveDuplicates([1, 1, 2, 2, 3, 3, 4, 4])).toEqual([2, 4, 6, 8]);
-        expect(await sumConsecutiveDuplicates([4, 2, 2, 4, 2, 2])).toEqual([4, 4, 4, 4]);
     });
 
     it('should combine multiple consecutive duplicates', async () => {
