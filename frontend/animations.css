@@ -1,0 +1,107 @@
+@import url('./colours.css');
+
+.slide-in {
+    animation-name: slide-in;
+    animation-duration:1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: forwards;
+}
+
+@keyframes slide-in {
+    from {
+        left: 100px;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.slide-out {
+    animation-name: slide-out;
+    animation-duration:1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: forwards;
+}
+
+@keyframes slide-out {
+    from {
+        left: 0;
+        opacity: 1;
+    }
+    to {
+        left: -100px;
+        opacity: 0;
+    }
+}
+
+.highlight {
+    animation-name: highlight;
+    animation-duration: 0.1s;
+    animation-direction: alternate;
+    animation-iteration-count: 9;
+    animation-fill-mode: forwards;
+}
+
+@keyframes highlight {
+    from {
+        border-color: default;
+    }
+    to {
+        border-color: var(--card-border-highlight-colour);
+    }
+}
+
+.highlightNoDuplicates {
+    animation-name: highlightNoDuplicates;
+    animation-duration: 1s;
+    animation-direction: forwards;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes highlightNoDuplicates {
+    from {
+        background-color: default;
+    }
+    to {
+        background-color: var(--card-no-duplicates-highlight-colour);
+    }
+}
+
+.highlightDuplicates {
+    animation-name: highlightDuplicates;
+    animation-duration: 1s;
+    animation-direction: forwards;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes highlightDuplicates {
+    from {
+        background-color: default;
+    }
+    to {
+        background-color: var(--card-duplicates-highlight-colour);
+    }
+}
+
+.expand {
+    animation-name: expand;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+    from {
+        background-color: var(--card-duplicates-highlight-colour);
+        transform: scale(1);
+    }
+    to {
+        background-color: var(--card-duplicates-highlight-colour);
+        transform: scale(1.3);
+    }
+}
