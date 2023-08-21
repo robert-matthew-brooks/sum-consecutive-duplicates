@@ -1,0 +1,287 @@
+@import url('./colours.css');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial;
+}
+
+main {
+    max-width: 600px;
+    margin: auto;
+}
+
+
+
+/**********/
+/* Header */
+/**********/
+
+
+
+header {
+    padding: 1em;
+    background-color: var(--header-bg-colour);
+}
+
+h1 {
+    text-align: center;
+    color: var(--header-text-colour);
+    font-weight: normal;
+}
+
+
+
+/**************/
+/* User Input */
+/**************/
+
+
+
+.app__controls {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    margin: auto;
+    padding: 1em;
+}
+
+#array-select {
+    flex: 2;
+}
+
+.app__controls > button {
+    padding: 0.8em 0.7em;
+
+    font-size: 1.05em;
+
+    border: 0;
+    border-radius: 0.4em;
+    background-color: var(--run-btn-bg-colour);
+    cursor: pointer;
+}
+.app__controls > button:disabled {
+    opacity: 0.5;
+}
+
+.app__controls > button:hover {
+    background-color: var(--run-btn-bg-hover-colour);
+    transform: scale(1.05);
+}
+
+.app__controls > select {
+    padding: 0.3em;
+}
+
+.app__controls__radio-wrapper {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+
+
+/*******************/
+/* Interactive App */
+/*******************/
+
+
+
+.app {
+    padding: 0.8em 0;
+    background-color: var(--app-bg-colour);
+}
+
+.app__outer-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+
+    margin: auto;
+    padding: 1em;
+}
+
+#app__inner-wrapper {
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.7em;
+
+    font-family:'Courier New', Courier, monospace;
+    font-size: 1.2em;
+}
+
+#app__inner-wrapper > span {
+    position: relative;
+    padding: 0.7em 0.8em;
+    background-color:var(--card-bg-colour);
+    border: 2px solid var(--card-border-colour);
+    border-radius: 0.5em;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+
+/*******************************/
+/*  Project Description Text   */
+/* (everything underneath app) */
+/*******************************/
+
+
+
+article {
+    padding: 1.8em;
+    background-color: var(--article-bg-colour);
+    border-top: 1px solid var(--section-border-colour);
+}
+
+article > p {
+    line-height: 1.8em;
+    margin: 1.5em 0;
+    padding: 0 0.6em;
+}
+
+article > p > a {
+    color: blue;
+    text-decoration: none;
+}
+article > p > a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    margin-bottom: 1em;
+}
+h2:not(:first-of-type) {
+    margin-top: 2em;
+}
+
+.instructions > em {
+    padding: 0.2em;
+    font-weight: bold;
+    border-radius: 0.5em;
+    background-color: var(--instructions-highlight-colour);
+}
+
+.kata-description {
+    font-style: italic;
+}
+.kata-description > em {
+    padding: 0.2em;
+    font-weight: bold;
+    border-radius: 0.5em;
+    background-color: var(--kata-highlight-colour);
+}
+
+
+
+/************/
+/* Profiles */
+/************/
+
+
+
+.profile {
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 1em;
+    border: 1px solid var(--profile-border-colour);
+    background-color: var(--profile-bg-colour);
+}
+
+.profile__mugshot {
+    width: 30%;
+    border-right: 1px solid var(--profile-border-colour);
+}
+
+.profile__icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5em;
+    padding: 0.2em;
+}
+.profile__icon-link > img {
+    width: 2.5em;
+}
+
+.profile > ul {
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+}
+.profile > ul > li {
+    margin: 0.5em;
+}
+.profile > ul > li:first-child {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.profile a {
+    display: inline-block;
+    border-radius: 0.5em;
+}
+.profile a:hover {
+    background-color: var(--profile-icon-bg-hover-colour);
+}
+
+
+
+/**********/
+/* Footer */
+/**********/
+
+
+
+footer {
+    padding: 1em;
+    text-align: center;
+    background-color: var(--footer-bg-colour);
+}
+
+footer > a {
+    color: var(--footer-link-colour);
+    text-decoration: underline;
+}
+
+
+
+/**************/
+/* Responsive */
+/**************/
+
+
+
+@media only screen and (min-width: 600px) { /* this should match the <main> max-width */
+    .app {
+        margin: 1em 0;
+        border: 1px solid var(--section-border-colour);
+    }
+            
+    article {
+        margin: 1em 0;
+        border: 1px solid var(--section-border-colour);
+    }
+}
+
+@media only screen and (max-width: 430px) { /* this should match the <main> max-width */
+    .profile__mugshot {
+        width: 38%;
+    }
+}
