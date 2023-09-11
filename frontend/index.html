@@ -1,125 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sum Consecutive Duplicates</title>
-        <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./animations.css">
-        <script src="./script.js" defer></script>
-        <script src="../sumConsecutiveDuplicates.js">
-        </script>
-        <link rel="shortcut icon" href="#">
-    </head>
-    <body onload="setupCardsNoAnimation(exampleArrays[0])">
-        <header>
-            <h1>Sum Consecutive Duplicates</h1>
-        </header>
-        <main>
-            <section class="app">
-                <section class="app__controls">
-                    <div class="app__controls__radio-wrapper">
-                        <label>
-                            <input type="radio" id="run-once-radio" name="recursive" value="false" onclick="handleRadio(this)" checked>
-                            Single Pass
-                        </label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sum Consecutive Duplicates</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./animations.css" />
+    <script src="./script.js" defer></script>
+    <script src="../sumConsecutiveDuplicates.js"></script>
+    <link rel="shortcut icon" href="#" />
+  </head>
+  <body onload="setupCardsNoAnimation(exampleArrays[0])">
+    <header class="shadow">
+      <h1>Sum Consecutive Duplicates</h1>
+    </header>
+    <main>
+      <section class="app shadow">
+        <section class="app__controls">
+          <div class="app__controls__radio-wrapper">
+            <label>
+              <input
+                type="radio"
+                id="run-once-radio"
+                name="recursive"
+                value="false"
+                onclick="handleRadio(this)"
+                checked
+              />
+              Single Pass
+            </label>
 
-                        <label>
-                            <input type="radio" id="run-recursively-radio" name="recursive" value="true" onclick="handleRadio(this)">
-                            Recursive
-                        </label>
-                    </div>
+            <label>
+              <input
+                type="radio"
+                id="run-recursively-radio"
+                name="recursive"
+                value="true"
+                onclick="handleRadio(this)"
+              />
+              Recursive
+            </label>
+          </div>
 
-                    <button id="run-btn" onclick="runSolution(recursive)">
-                        Run »
-                    </button>
-                </section>
+          <button id="run-btn" onclick="runSolution(recursive)">Run »</button>
+        </section>
 
-                <section class="app__outer-wrapper">
-                    <div id="app__inner-wrapper">
-                        <!-- populate with array elements -->
-                    </div>
-                </section>
+        <section class="app__outer-wrapper">
+          <div id="app__inner-wrapper">
+            <!-- populate with array elements -->
+          </div>
+        </section>
 
-                <section class="app__controls">
-                    Change array:
-                    <select id="array-select" onchange="handleSelect(+this.value);">
-                        <option value="-" disabled>--Select:--</option>
-                        <option value="0" selected>Example Array 1</option>
-                        <option value="1">Example Array 2</option>
-                        <option value="2">Example Array 3</option>
-                        <option value="999">Randomise</option>
-                    </select>
-                </section>
-            </section>
+        <section class="app__controls">
+          Change array:
+          <select id="array-select" onchange="handleSelect(+this.value);">
+            <option value="-" disabled>--Select:--</option>
+            <option value="0" selected>Example Array 1</option>
+            <option value="1">Example Array 2</option>
+            <option value="2">Example Array 3</option>
+            <option value="999">Randomise</option>
+          </select>
+        </section>
+      </section>
 
-            <article>
-                <h2>About:</h2>
-                <p>The aim of this project is to solve a <strong>javascript</strong> kata and use a <strong>HTML</strong> and vanilla <strong>CSS</strong> frontend to show how the algorithm is solving the problem.</p>
-                <p class="instructions">Press the <em>Run »</em> button, and any numbers which are touching will be combined. For example, [1, 2, 2, 2, 3] will become [1, 6, 3], because the 2s are next to each other.</p>
-                
-                <h2>The Kata:</h2>
-                <p class="kata-description">"Implement a function <em>sumConsecutiveDuplicates()</em> which adds together all the consecutive numbers in an array and pushes them into a new array. For extra credit, write a function <em>reduceConsecutives()</em> which recursively uses your <em>sumConsecutiveDuplicates()</em> function to reduce the array down until there are no more consecutive duplicate numbers."</p>
-                <p>(Original kata from <a href="https://l2c.northcoders.com/courses/be/be-katas-week-2#sectionId=sumConsecutiveDuplicates">Northcoders</a> wesbite)</p>
-                <p>For the kata <strong>solution</strong> script, <a href="https://github.com/robert-matthew-brooks/sum-consecutive-duplicates/blob/main/sumConsecutiveDuplicates.js">click here</a>.
-                    <br>For the solution <strong>test suite</strong>, <a href="https://github.com/robert-matthew-brooks/sum-consecutive-duplicates/blob/main/__tests__/sumConsecutiveDuplicates.test.js">click here</a>.</p>
-                
-                <h2>Features:</h2>
-                <p>The solution algorithm can be run once or <strong>recursively</strong>. The function will analyse each array element from left to right, and any duplicate elements are combined. However, this may result in more consecutive duplicates being created. The algorithm can be run recursively, and will continue to make analysis passes of the array until the resulting array cannot be reduced any further.</p>
-                <p>The javascript functions and html frontend are <strong>dynamic</strong>. The input array can be randomised using the drop down menu above, and the program will still function correctly.</p>
-                <p>This page is <strong>responsive</strong>, and the layout was designed with a "mobile first" approach.</p>
+      <article class="shadow">
+        <h2>About:</h2>
+        <p>
+          The aim of this project is to solve a <strong>javascript</strong> kata
+          and use a <strong>HTML</strong> and vanilla
+          <strong>CSS</strong> frontend to show how the algorithm is solving the
+          problem.
+        </p>
+        <p class="instructions">
+          Press the <em>Run »</em> button, and any numbers which are touching
+          will be combined. For example, [1, 2, 2, 2, 3] will become [1, 6, 3],
+          because the 2s are next to each other.
+        </p>
 
-                <h2>Our Team:</h2>
+        <h2>The Kata:</h2>
+        <p class="kata-description">
+          "Implement a function <em>sumConsecutiveDuplicates()</em> which adds
+          together all the consecutive numbers in an array and pushes them into
+          a new array. For extra credit, write a function
+          <em>reduceConsecutives()</em> which recursively uses your
+          <em>sumConsecutiveDuplicates()</em> function to reduce the array down
+          until there are no more consecutive duplicate numbers."
+        </p>
+        <p>
+          (Original kata from
+          <a
+            href="https://l2c.northcoders.com/courses/be/be-katas-week-2#sectionId=sumConsecutiveDuplicates"
+            >Northcoders</a
+          >
+          wesbite)
+        </p>
+        <p>
+          For the kata <strong>solution</strong> script,
+          <a
+            href="https://github.com/robert-matthew-brooks/sum-consecutive-duplicates/blob/main/sumConsecutiveDuplicates.js"
+            >click here</a
+          >. <br />For the solution <strong>test suite</strong>,
+          <a
+            href="https://github.com/robert-matthew-brooks/sum-consecutive-duplicates/blob/main/__tests__/sumConsecutiveDuplicates.test.js"
+            >click here</a
+          >.
+        </p>
 
-                <div class="profile">
-                    <img class="profile__mugshot" src="./img/bob.jpg" alt="Bob photo">
-                    <ul>
-                        <li>Robert Brooks</li>
-                        <li>
-                            <a class="profile__icon-link" href="https://github.com/robert-matthew-brooks">
-                                <img src="./img/github-icon.png" alt="GitHub icon">
-                            </a>
-                            <a class="profile__icon-link" href="https://www.linkedin.com/in/robert-matthew-brooks/">
-                                <img src="./img/linkedin-icon.png" alt="LinkedIn icon">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <h2>Features:</h2>
+        <p>
+          The solution algorithm can be run once or
+          <strong>recursively</strong>. The function will analyse each array
+          element from left to right, and any duplicate elements are combined.
+          However, this may result in more consecutive duplicates being created.
+          The algorithm can be run recursively, and will continue to make
+          analysis passes of the array until the resulting array cannot be
+          reduced any further.
+        </p>
+        <p>
+          The javascript functions and html frontend are
+          <strong>dynamic</strong>. The input array can be randomised using the
+          drop down menu above, and the program will still function correctly.
+        </p>
+        <p>
+          This page is <strong>responsive</strong>, and the layout was designed
+          with a "mobile first" approach.
+        </p>
 
-                <div class="profile">
-                    <img class="profile__mugshot" src="./img/yara.png" alt=" photo">
-                    <ul>
-                        <li>Yara Cremaschi</li>
-                        <li>
-                            <a class="profile__icon-link" href="https://github.com/yaahcd">
-                                <img src="./img/github-icon.png" alt="GitHub icon">
-                            </a>
-                            <a class="profile__icon-link" href="https://www.linkedin.com/in/yara-c-390339268/">
-                                <img src="./img/linkedin-icon.png" alt="LinkedIn icon">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <h2>About Me:</h2>
 
-                <div class="profile">
-                    <img class="profile__mugshot" src="./img/gary.png" alt=" photo">
-                    <ul>
-                        <li>Gary Huynh</li>
-                        <li>
-                            <a class="profile__icon-link" href="https://github.com/Gary-Huynh">
-                                <img src="./img/github-icon.png" alt="GitHub icon">
-                            </a>
-                            <a class="profile__icon-link" href="https://www.linkedin.com/in/gary-huynh-1137b3107/">
-                                <img src="./img/linkedin-icon.png" alt="LinkedIn icon">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </article>
-        </main>
+        <div class="profile">
+          <img class="profile__mugshot" src="./img/bob.jpg" alt="Bob photo" />
+          <ul>
+            <li>Robert Brooks</li>
+            <li>
+              <a
+                class="profile__icon-link"
+                href="https://github.com/robert-matthew-brooks"
+              >
+                <img src="./img/github-icon.png" alt="GitHub icon" />
+              </a>
+              <a
+                class="profile__icon-link"
+                href="https://www.linkedin.com/in/robert-matthew-brooks/"
+              >
+                <img src="./img/linkedin-icon.png" alt="LinkedIn icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </main>
 
-        <footer>
-            <a href="https://github.com/robert-matthew-brooks/sum-consecutive-duplicates">view project on github</a>
-        </footer>
-    </body>
+    <footer class="shadow">
+      <a
+        href="https://github.com/robert-matthew-brooks/sum-consecutive-duplicates"
+        >view project on github</a
+      >
+    </footer>
+  </body>
 </html>
