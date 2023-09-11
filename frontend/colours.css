@@ -1,28 +1,31 @@
 :root {
-    --header-bg-colour: darkslategray;
-    --header-text-colour: white;
+  --body-inner-bg-colour: lightgrey;
+  --body-outer-bg-colour: white;
 
-    --run-btn-bg-colour: #69bd6c;
-    --run-btn-bg-hover-colour: #8eda91;
+  --header-bg-colour: darkslategray;
+  --header-text-colour: white;
 
-    --section-border-colour: #c0c0c0;
+  --run-btn-bg-colour: #7cd67f;
+  --run-btn-bg-hover-colour: #9ee9a1;
 
-    --app-bg-colour: lightgoldenrodyellow;
-    --card-bg-colour: white;
-    --card-border-colour: #c0c0c0;
-    --card-border-highlight-colour: black;
+  --section-border-colour: #c0c0c0;
 
-    --card-no-duplicates-highlight-colour: #afebcd;
-    --card-duplicates-highlight-colour: #f0c9c9;
+  --app-bg-colour: lightgoldenrodyellow;
+  --card-bg-colour: white;
+  --card-border-colour: #c0c0c0;
+  --card-border-highlight-colour: black;
 
-    --article-bg-colour: #f8f8f8;
-    --instructions-highlight-colour: #69bd6c;
-    --kata-highlight-colour: #ebeb56;
+  --card-no-duplicates-highlight-colour: #afebcd;
+  --card-duplicates-highlight-colour: #f0c9c9;
 
-    --profile-border-colour: black;
-    --profile-bg-colour: white;
-    --profile-icon-bg-hover-colour: #e0e0e0;
+  --article-bg-colour: #f8f8f8;
+  --instructions-highlight-colour: #69bd6c;
+  --kata-highlight-colour: #ebeb56;
 
-    --footer-bg-colour: #303030;
-    --footer-link-colour: white;
+  --profile-border-colour: black;
+  --profile-bg-colour: white;
+  --profile-icon-bg-hover-colour: #e0e0e0;
+
+  --footer-bg-colour: #303030;
+  --footer-link-colour: white;
 }

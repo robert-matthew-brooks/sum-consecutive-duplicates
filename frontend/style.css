@@ -7,6 +7,10 @@
 
 body {
   font-family: Arial;
+  background: radial-gradient(
+    var(--body-inner-bg-colour),
+    var(--body-outer-bg-colour)
+  );
 }
 
 main {
